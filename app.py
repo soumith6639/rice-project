@@ -4,6 +4,9 @@ from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
+@app.route('/')
+def home():
+    return "welcome to Sri Sai Modern Ricemill!"
 
 @app.route('/api/checkout', methods=['POST'])
 def checkout():
