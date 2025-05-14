@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from waitress import serve
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 @app.route('/')
 def home():
-    return "welcome to Sri Sai Modern Ricemill!"
+    return render_template("index.html")
 
 @app.route('/api/checkout', methods=['POST'])
 def checkout():
